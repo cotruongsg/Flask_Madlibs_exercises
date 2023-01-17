@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+
+  <h1>Madlibs</h1>
+  <form action="/questions">
+    <select name="story_id">
+      <!-- The story variable will access the first value of stories array -->
+      <!-- it will return the whole data of the first story1 in first loop -->
+      {% for story in stories %} 
+        <!-- Then use story.code story.title to access and display data -->
+        <option value="{{ story.code }}">
+          {{ story.title }}
+        </option>
+      {% endfor %}
+    </select>
+    <button>Go</button>
+  </form>
+  
+{% endblock %}
